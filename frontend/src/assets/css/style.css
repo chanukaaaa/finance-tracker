@@ -1,0 +1,323 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+  @apply bg-white overflow-x-hidden relative;
+}
+
+@keyframes pulse-circle {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+.scrollbar-x-style::-webkit-scrollbar {
+  height: 5px;
+}
+
+.scrollbar-x-style::-webkit-scrollbar-thumb {
+  background-color: #c3e1ff;
+}
+
+.scrollbar-x-style::-webkit-scrollbar-track {
+  background-color: #edf2f7;
+}
+
+.scrollbar-y-style::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar-y-style::-webkit-scrollbar-thumb {
+  background-color: #c3e1ff;
+}
+
+.scrollbar-y-style::-webkit-scrollbar-track {
+  background-color: #edf2f7;
+}
+
+.fade-up-enter-active {
+  transition: opacity 0.5s, transform 0.8s;
+}
+
+.fade-up-enter-active-large {
+  transition: opacity 0.5s, transform 0.8s;
+}
+
+.fade-up-enter-from {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.fade-up-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.web-button {
+  background-color: transparent;
+  transition: background-color 0.3s ease-in;
+}
+.web-button:hover {
+  background-color: #461058;
+  color: white;
+}
+
+.font-border {
+  text-shadow: -2px -2px 0 #324589, 2px -2px 0 #324589, -2px 2px 0 #324589,
+    2px 2px 0 #324589;
+}
+.font-border-hover {
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+    2px 2px 0 #fff;
+}
+
+.contact-input {
+  border: none;
+  border-bottom: 3px solid #2e02494d; /* Set the color of the bottom border */
+  outline: none;
+}
+.contact-input:focus {
+  border-bottom: 3px solid #000; /* Set the color of the bottom border */
+}
+
+.contact-input::placeholder {
+  color: #2e02494d; /* Set the default placeholder color */
+}
+
+.contact-input:focus::placeholder {
+  color: #000000; /* Change the color to your desired focus placeholder color */
+}
+
+.contact-button:hover {
+  background-color: #461058;
+  color: white;
+}
+.contact-button {
+  background-color: #000000;
+  transition: background-color 0.3s ease-in;
+}
+
+.nav-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-item:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.read-more {
+  position: relative;
+  overflow: hidden;
+}
+
+.read-more::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff1d03;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.read-more:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
+}
+
+.loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border: 4px solid #461058;
+  top: 50%;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #461058;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}
+
+.mySwiper .swiper-wrapper {
+  @apply flex  items-center;
+}
+
+.mySwiper {
+  @apply h-[100%] w-full rounded-md;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+.fade-right-enter-active {
+  transition: opacity 0.5s, transform 0.8s;
+}
+
+.fade-right-enter-active-large {
+  transition: opacity 0.5s, transform 0.8s;
+}
+
+@media (max-width: 768px) {
+  .fade-right-enter-from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  .fade-right-enter-to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.Toastify__toast-container {
+  z-index: 10000 !important;
+}
+
+.print-page {
+  width: 210mm; /* A5 width in landscape */
+  height: 148mm; /* A5 height in landscape */
+  margin: 0 auto;
+  padding: 10mm;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.print-page-thermel {
+  width: 80mm; /* Width of the thermal paper */
+  height: auto; /* Height can be auto or set to a specific length */
+  margin: 0;
+  padding: 5mm; /* Reduced padding to fit the narrower paper */
+  background-color: white;
+}
+
+.swal2-container {
+  z-index: 10000;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .print-page {
+    box-shadow: none;
+  }
+
+  .header {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure header is on top of other content */
+  }
+
+  .content {
+    margin-top: 20px; /* Adjust according to header height */
+  }
+
+  .footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px; /* Adjust as needed */
+    z-index: 1000; /* Ensure footer is on top of other content */
+  }
+}
